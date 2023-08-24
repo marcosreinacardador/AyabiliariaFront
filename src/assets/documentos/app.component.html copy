@@ -1,0 +1,36 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="200"
+    alt="Ayabiliaria logo"
+    src="assets/logos/Ayabiliaria.png"
+  />
+  <span>Inicio</span>
+  
+</div>
+
+<div class="content" role="main">
+
+
+ 
+
+ 
+
+  
+ 
+
+  
+
+  
+
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
