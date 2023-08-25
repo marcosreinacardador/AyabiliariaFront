@@ -1,1 +1,65 @@
-<p>listados-cliente works!</p>
+<br><br><br><br>
+<h6 class="rest_titulo">Gestión clientes</h6>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- DNI Column -->
+  <tr ng-container matColumnDef="dni">
+    <mat-header-cell *matHeaderCellDef> DNI </mat-header-cell>
+    <mat-cell *matCellDef="let cliente"> {{cliente.dni}} </mat-cell>
+  </tr>
+
+  <!-- NOMBRE Column -->
+  <tr ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef> NOMBRE COMPLETO</mat-header-cell>
+    <mat-cell *matCellDef="let cliente"> {{cliente.nombre}} {{cliente.apellidos}} </mat-cell>
+  </tr>
+
+ 
+
+  <!-- TELEFONO Column -->
+  <tr ng-container matColumnDef="telefonoContacto">
+    <mat-header-cell *matHeaderCellDef> TELEFONO </mat-header-cell>
+    <mat-cell *matCellDef="let cliente"> {{cliente.telefonoContacto}} </mat-cell>
+  </tr>
+
+  <!-- CORREO ELECTRONICO Column -->
+  <tr ng-container matColumnDef="correoElectronico">
+    <mat-header-cell *matHeaderCellDef> CORREO </mat-header-cell>
+    <mat-cell *matCellDef="let cliente"> {{cliente.correoElectronico}} </mat-cell>
+  </tr>
+
+  <!-- DATOS BANCARIOS Column -->
+  <tr ng-container matColumnDef="datosBancarios">
+    <mat-header-cell *matHeaderCellDef> BANCO </mat-header-cell>
+    <mat-cell *matCellDef="let cliente"> {{cliente.datosBancarios}} </mat-cell>
+  </tr>
+  
+  <tr ng-container matColumnDef="accion">
+    <mat-header-cell *matHeaderCellDef ></mat-header-cell>
+    <mat-cell *matCellDef="let cliente">
+      
+      <button mat-icon-button color="primary" (click)="modificarCliente(cliente)">
+        <mat-icon>edit</mat-icon> <!-- Icono de modificar -->
+      </button>
+
+      <button mat-icon-button color="primary" (click)="abrirFormularioAltaCliente()">
+        <mat-icon>add</mat-icon>
+      </button>
+      
+    </mat-cell>
+  </tr>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  
+</mat-table>
+
+
+<mat-paginator [length]="totalRegistros"
+              [pageSize]="totalPorPagina"
+              [pageSizeOptions]="opcionesTamanio"
+              [pageIndex]="paginaActual"
+              aria-label="Select page"
+              showFirstLastButtons
+              (page)="paginar($event)">
+</mat-paginator>

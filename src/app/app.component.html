@@ -5,25 +5,36 @@
     alt="Ayabiliaria logo"
     src="assets/logos/Ayabiliaria.png"
   />
-  <span>Inicio</span>
+
+<button mat-button [matMenuTriggerFor]="aboveMenu">Clientes</button>
+<!-- #docregion menu-position -->
+<mat-menu #aboveMenu="matMenu" yPosition="above">
+<!-- #enddocregion menu-position -->
+  <button mat-menu-item routerLink="/altas">Alta</button>
+  <button mat-menu-item routerLink="/modificar">Modificar</button>
+  <button mat-menu-item routerLink="/consultar">Consultar</button>
+  <button mat-menu-item routerLink="/listados">Listados</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="belowMenu">Propiedades</button>
+<mat-menu #belowMenu="matMenu" yPosition="above">
+  <button mat-menu-item routerLink="/altas">Alta</button>
+  <button mat-menu-item routerLink="/modificar">Modificar</button>
+  <button mat-menu-item routerLink="/consultar">Consultar</button>
+  <button mat-menu-item routerLink="/listados">Listados</button>
+</mat-menu>
+
+<!--
+<button mat-button [matMenuTriggerFor]="beforeMenu">Before</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+-->
   
 </div>
 
-<div class="content" role="main">
 
-
- 
-
- 
-
-  
- 
-
-  
-
-  
-
-</div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->

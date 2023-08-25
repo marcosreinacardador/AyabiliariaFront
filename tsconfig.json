@@ -6,6 +6,9 @@
     "noImplicitAny": false,  //me permite declarar variables sin tipo(como en JS)
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@angular/*": ["node_modules/@angular/*"]
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

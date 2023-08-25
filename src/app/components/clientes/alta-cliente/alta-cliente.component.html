@@ -1,1 +1,13 @@
-<p>alta-cliente works!</p>
+<h2>Añadir Cliente</h2>
+<form [formGroup]="formulario" (ngSubmit)="guardarCliente()">
+  <mat-form-field>
+    <input matInput formControlName="dni" placeholder="DNI" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="nombre" placeholder="Nombre" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Guardar</button>
+  <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+
+
