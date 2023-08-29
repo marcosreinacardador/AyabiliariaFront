@@ -6,7 +6,8 @@ import { AyabiliariaService } from 'src/app/services/ayabiliaria.service';
 import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
-import { AltaClienteComponent } from '../alta-cliente/alta-cliente.component';
+
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 
 
@@ -18,7 +19,7 @@ import { AltaClienteComponent } from '../alta-cliente/alta-cliente.component';
 
 export class ListadosClienteComponent implements OnInit{
 
-  displayedColumns: string[] = ['dni', 'nombre', 'telefonoContacto', 'correoElectronico', 'datosBancarios', 'accion'];
+  displayedColumns: string[] = ['dni', 'nombre', 'telefonoContacto', 'correoElectronico', 'datosBancarios'];
   dataSource: MatTableDataSource<Cliente>; // Usa MatTableDataSource para los datos
 
   lista_clientes = Array<Cliente>();
@@ -27,10 +28,10 @@ export class ListadosClienteComponent implements OnInit{
   totalPorPagina: number = 10;
   opcionesTamanio: number[] = [10, 20, 30, 1000];
   paginaActual: number = 0;
-  dialog: any;
+  dialogRef: MatDialogRef<any>;
+  
 
-  constructor(private ayabiliariaService: AyabiliariaService, private servicioRutas: Router) {
-    this.lista_clientes = new Array<Cliente>();
+  constructor(private ayabiliariaService: AyabiliariaService, private dialog: MatDialog) {
     this.dataSource = new MatTableDataSource<Cliente>();
   }
 
@@ -66,26 +67,5 @@ export class ListadosClienteComponent implements OnInit{
 
    });
  }
-
- abrirFormularioAltaCliente(): void {
-  // Abre el formulario para añadir un nuevo cliente
-  const dialogRef = this.dialog.open(AltaClienteComponent, {
-    width: '400px', // Ajusta el ancho según tus necesidades
-    data: {} // Puedes pasar datos al formulario si es necesario
-  });
-
-  dialogRef.afterClosed().subscribe(result => {
-    // Aquí puedes manejar el resultado del formulario
-    if (result) {
-      console.log('Cliente añadido:', result);
-    }
-  });
-}
-
-  modificarCliente(cliente: Cliente): void {
-    // Implementa la lógica para modificar el cliente aquí
-    console.log('Modificando al cliente:', cliente);
-  }
-
-}
+} 
 

@@ -1,13 +1,51 @@
-<h2>Añadir Cliente</h2>
-<form [formGroup]="formulario" (ngSubmit)="guardarCliente()">
-  <mat-form-field>
-    <input matInput formControlName="dni" placeholder="DNI" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput formControlName="nombre" placeholder="Nombre" required>
-  </mat-form-field>
 
-  <button mat-raised-button color="primary" type="submit">Guardar</button>
-  <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
-
-
+<div class="container">
+  <div class="row justify-content-center">
+    <h6 class="card-title rest_titulo text-center">Dar de alta cliente</h6>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <span class="input-group-addon espacios"></span>
+          <form (submit)="guardarCliente()">
+            <div class="form-group">
+              <label for="dni">DNI</label>&nbsp;
+              <input type="text" #dni="ngModel" [(ngModel)]="cliente.dni" class="form-control" id="dni" name="dni" placeholder="Introduzca DNI del cliente" required pattern=".{9,13}">
+              <div class="alert alert-danger" [hidden]="dni.pristine || dni.valid">
+                DNI es obligatorio
+              </div>
+            </div>
+          
+            <span class="input-group-addon espacios"></span>
+            <div class="form-group">
+              <label for="nombre">Nombre y Apellidos</label>&nbsp;
+              <input type="text" #nombre="ngModel" [(ngModel)]="cliente.nombre" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+              <input type="text" #apellidos="ngModel" [(ngModel)]="cliente.apellidos" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+            </div>
+          
+            <span class="input-group-addon espacios"></span>
+            <div class="form-group">
+              <label for="telefonoContacto">Teléfono de Contacto</label>&nbsp;
+              <input type="text" #telefonoContacto="ngModel" [(ngModel)]="cliente.telefonoContacto" class="form-control" id="telefonoContacto" name="telefonoContacto" placeholder="Teléfono de contacto" required>
+            </div>
+        
+            <span class="input-group-addon espacios"></span>
+            <div class="form-group">
+              <label for="correoElectronico">Correo Electrónico</label>&nbsp;
+              <input type="email" #correoElectronico="ngModel" [(ngModel)]="cliente.correoElectronico" class="form-control" id="correoElectronico" name="correoElectronico" placeholder="Correo electrónico" required>
+            </div>
+          
+            <span class="input-group-addon espacios"></span>
+            <div class="form-group">
+              <label for="datosBancarios">Datos Bancarios</label>&nbsp;
+              <input type="text" #datosBancarios="ngModel" [(ngModel)]="cliente.datosBancarios" class="form-control" id="datosBancarios" name="datosBancarios" placeholder="Datos bancarios" required>
+            </div>
+            <span class="input-group-addon espacios"></span>
+            <div align="center" class="text-center">
+              <button  type="submit" class="btn btn-primary">Dar de alta</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

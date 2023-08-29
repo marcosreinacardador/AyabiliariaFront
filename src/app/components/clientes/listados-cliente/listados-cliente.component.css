@@ -45,5 +45,26 @@ section {
   width: 120px;
 }
 
+/* Estilos para la fila de nuevo cliente */
+.new-client-row {
+  background-color: #f5f5f5;
+}
 
-  
+.new-client-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.new-client-form input {
+  padding: 4px;
+}
+
+.new-client-form button {
+  margin-left: 8px;
+}
+
+
+
+
+

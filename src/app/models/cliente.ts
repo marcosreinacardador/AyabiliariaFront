@@ -1,10 +1,11 @@
 export class Cliente {
-    dni:String;
-    nombre:String;
-    apellidos:String;
-    telefonoContacto:String;
-    correoElectronico:String;
-    datosBancarios:String;
+    dni:string;
+    nombre:string;
+    apellidos:string;
+    telefonoContacto:string;
+    correoElectronico:string;
+    datosBancarios:string;
+  static editando: boolean;
 
     constructor(){
         this.dni = '';

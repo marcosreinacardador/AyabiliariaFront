@@ -14,8 +14,6 @@
     <mat-cell *matCellDef="let cliente"> {{cliente.nombre}} {{cliente.apellidos}} </mat-cell>
   </tr>
 
- 
-
   <!-- TELEFONO Column -->
   <tr ng-container matColumnDef="telefonoContacto">
     <mat-header-cell *matHeaderCellDef> TELEFONO </mat-header-cell>
@@ -34,27 +32,13 @@
     <mat-cell *matCellDef="let cliente"> {{cliente.datosBancarios}} </mat-cell>
   </tr>
   
-  <tr ng-container matColumnDef="accion">
-    <mat-header-cell *matHeaderCellDef ></mat-header-cell>
-    <mat-cell *matCellDef="let cliente">
-      
-      <button mat-icon-button color="primary" (click)="modificarCliente(cliente)">
-        <mat-icon>edit</mat-icon> <!-- Icono de modificar -->
-      </button>
-
-      <button mat-icon-button color="primary" (click)="abrirFormularioAltaCliente()">
-        <mat-icon>add</mat-icon>
-      </button>
-      
-    </mat-cell>
-  </tr>
-
+  
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   
 </mat-table>
 
-
+<!-- Paginación -->
 <mat-paginator [length]="totalRegistros"
               [pageSize]="totalPorPagina"
               [pageSizeOptions]="opcionesTamanio"

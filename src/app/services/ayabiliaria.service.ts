@@ -37,6 +37,12 @@ export class AyabiliariaService {
       return this.http.get<Cliente[]>(AyabiliariaService.URL_ACTUAL+'/listarClientes'); // Cambia la URL según tu API
     }
     
+    //Añadir un cliente nuevo
+    postAltaClienteService(cliente: Cliente): Observable<Cliente>{
+      return this.http.post<Cliente>(AyabiliariaService.URL_ACTUAL + '/altaCliente', cliente,
+      { headers: this.cabeceras });
+    }
+
     // Metodo que comunica con el servidor  GET http://localhost:8081/ayabiliaria/pagina?page=0&size=2
      getClientesPorPaginas(page: number, size: number): Observable<any> {
        let parametros: HttpParams = new HttpParams()
@@ -45,6 +51,7 @@ export class AyabiliariaService {
      return this.http.get<any>(AyabiliariaService.URL_ACTUAL + '/pagina', {
        params: parametros,
      });
-
   }
+
+  
 }
