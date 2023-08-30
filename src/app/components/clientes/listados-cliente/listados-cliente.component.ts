@@ -25,8 +25,8 @@ export class ListadosClienteComponent implements OnInit{
   lista_clientes = Array<Cliente>();
   
   totalRegistros: number = 0;
-  totalPorPagina: number = 10;
-  opcionesTamanio: number[] = [10, 20, 30, 1000];
+  totalPorPagina: number = 8;
+  opcionesTamanio: number[] = [8, 16, 32, 1000];
   paginaActual: number = 0;
   dialogRef: MatDialogRef<any>;
   

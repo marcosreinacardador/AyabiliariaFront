@@ -1,0 +1,76 @@
+table {
+    width: 100%;
+  }
+  
+  .rest_titulo{
+    font-family: "Nunito", sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+    font-display: auto;
+    text-align: center;
+    color: #5c7cc8;
+    margin-bottom: 20px;
+  }
+  
+  section {
+    display: table;
+    font-display: arial;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  
+  /* Estilos para la fila de nuevo cliente */
+  .new-client-row {
+    background-color: #f5f5f5;
+  }
+  
+  .new-client-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .new-client-form input {
+    padding: 4px;
+  }
+  
+  .new-client-form button {
+    margin-left: 8px;
+  }
+  
+  /* Estilos para el campo de descripción */
+#descripcion {
+    resize: vertical; /* Permite redimensionar verticalmente */
+  }
+  
+  
+  
+  
+  
+  

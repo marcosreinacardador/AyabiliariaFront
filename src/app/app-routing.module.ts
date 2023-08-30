@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:"modificar", component: ModificarClienteComponent},
   {path:"listados", component: ListadosClienteComponent},
   {path:"consultar", component: ConsultasClienteComponent},
-  {path:"altas", component: AltaProComponent},
+  {path:"alta-pro", component: AltaProComponent},
   {path:"modificar", component: ModificarProComponent},
   {path:"listados", component: ListadosProComponent},
   {path:"consultar", component: ConsultasProComponent},

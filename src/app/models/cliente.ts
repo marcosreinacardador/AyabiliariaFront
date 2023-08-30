@@ -5,8 +5,7 @@ export class Cliente {
     telefonoContacto:string;
     correoElectronico:string;
     datosBancarios:string;
-  static editando: boolean;
-
+  
     constructor(){
         this.dni = '';
         this.nombre = '';

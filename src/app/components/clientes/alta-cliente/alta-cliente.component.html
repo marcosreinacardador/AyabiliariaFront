@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="container">
   <div class="row justify-content-center">
@@ -6,10 +7,10 @@
       <div class="card">
         <div class="card-body">
           <span class="input-group-addon espacios"></span>
-          <form (submit)="guardarCliente()">
+          <form>
             <div class="form-group">
               <label for="dni">DNI</label>&nbsp;
-              <input type="text" #dni="ngModel" [(ngModel)]="cliente.dni" class="form-control" id="dni" name="dni" placeholder="Introduzca DNI del cliente" required pattern=".{9,13}">
+              <input type="text" #dni="ngModel" [(ngModel)]="cliente.dni" class="form-control" id="dni" name="dni" placeholder="Introduzca DNI del cliente" required pattern=".{9,13}" autofocus #dniInput>
               <div class="alert alert-danger" [hidden]="dni.pristine || dni.valid">
                 DNI es obligatorio
               </div>
@@ -19,29 +20,52 @@
             <div class="form-group">
               <label for="nombre">Nombre y Apellidos</label>&nbsp;
               <input type="text" #nombre="ngModel" [(ngModel)]="cliente.nombre" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+              <div class="alert alert-danger" [hidden]="nombre.pristine || nombre.valid"></div>
               <input type="text" #apellidos="ngModel" [(ngModel)]="cliente.apellidos" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+              <div class="alert alert-danger" [hidden]="apellidos.pristine || apellidos.valid"></div>
             </div>
           
             <span class="input-group-addon espacios"></span>
             <div class="form-group">
               <label for="telefonoContacto">Teléfono de Contacto</label>&nbsp;
               <input type="text" #telefonoContacto="ngModel" [(ngModel)]="cliente.telefonoContacto" class="form-control" id="telefonoContacto" name="telefonoContacto" placeholder="Teléfono de contacto" required>
+              <div class="alert alert-danger" [hidden]="telefonoContacto.pristine || telefonoContacto.valid"></div>
             </div>
         
             <span class="input-group-addon espacios"></span>
             <div class="form-group">
               <label for="correoElectronico">Correo Electrónico</label>&nbsp;
               <input type="email" #correoElectronico="ngModel" [(ngModel)]="cliente.correoElectronico" class="form-control" id="correoElectronico" name="correoElectronico" placeholder="Correo electrónico" required>
+              <div class="alert alert-danger" [hidden]="correoElectronico.pristine || correoElectronico.valid"></div>
             </div>
           
             <span class="input-group-addon espacios"></span>
             <div class="form-group">
               <label for="datosBancarios">Datos Bancarios</label>&nbsp;
               <input type="text" #datosBancarios="ngModel" [(ngModel)]="cliente.datosBancarios" class="form-control" id="datosBancarios" name="datosBancarios" placeholder="Datos bancarios" required>
+              <div class="alert alert-danger" [hidden]="datosBancarios.pristine || datosBancarios.valid"></div>
             </div>
+            
             <span class="input-group-addon espacios"></span>
+
             <div align="center" class="text-center">
-              <button  type="submit" class="btn btn-primary">Dar de alta</button>
+
+              <button mat-icon-button color="primary" (click)="guardarCliente()" [disabled]="clienteIsEmpty() || deshabilitaGuardar">
+                <mat-icon aria-hidden="false" aria-label="añadir cliente" fontIcon="save"></mat-icon>
+              </button>
+              
+              <button mat-icon-button color="primary" *ngIf="clienteGuardadoExitosamente" (click)="crearPropiedad()" [disabled]="clienteIsEmpty()">
+                <mat-icon aria-hidden="false" aria-label="añadir inmueble" fontIcon="add_home_work"></mat-icon>
+              </button>
+
+              <button mat-icon-button color="primary" (click)="limpiarCampos() ">
+                <mat-icon aria-hidden="false" aria-label="limpiarCampos" fontIcon="person_add_alt_1"></mat-icon>
+              </button>
+
+              <button mat-icon-button color="primary" (click)="salir()">
+                <mat-icon aria-hidden="false" aria-label="volver al menu" fontIcon="home"></mat-icon>
+              </button>
+              
             </div>
           </form>
         </div>
