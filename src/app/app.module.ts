@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ViewChild } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +30,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatSelectModule } from '@angular/material/select';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ModificarProComponent,
     ListadosProComponent,
     ConsultasProComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -61,9 +64,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatTooltipModule 
+    MatSidenavModule,
+    RouterModule.forRoot([]),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

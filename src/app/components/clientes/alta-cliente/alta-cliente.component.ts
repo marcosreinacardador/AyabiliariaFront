@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/models/cliente';
+import { Cliente } from 'src/app/modules/cliente';
 import { AyabiliariaService } from 'src/app/services/ayabiliaria.service';
 import { Router } from '@angular/router';
 import { ViewChild, ElementRef } from '@angular/core';
-
 
 @Component({
   selector: 'app-alta-cliente',
@@ -67,7 +66,7 @@ export class AltaClienteComponent implements OnInit {
   }
 
   salir(){
-    this.servicioRutas.navigate(['/']);
+    this.servicioRutas.navigate(['/listados']);
   }
 
   limpiarCampos(){

@@ -5,7 +5,7 @@ export class Propiedad {
   cliente: Cliente;
   tipoPropiedad: string;
   operacion: string;
-  estado: number;
+  estado: boolean;
   direccion: string;
   localidad: string;
   poblacion: string;
@@ -33,7 +33,7 @@ export class Propiedad {
     this.cliente;
     this.tipoPropiedad = '';
     this.operacion = '';
-    this.estado = 0;
+    this.estado = true;
     this.direccion = '';
     this.localidad = '';
     this.poblacion = '';

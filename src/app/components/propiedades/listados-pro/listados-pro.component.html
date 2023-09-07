@@ -1,1 +1,53 @@
-<p>listados-pro works!</p>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Numero referencia Column -->
+    <tr ng-container matColumnDef="numeroReferencia">
+      <mat-header-cell *matHeaderCellDef> NºRef. </mat-header-cell>
+      <mat-cell *matCellDef="let propiedad"> {{propiedad.numeroReferencia}} </mat-cell>
+    </tr>
+  
+    <!-- Tipo propiedad Column -->
+    <tr ng-container matColumnDef="tipoPropiedad">
+      <mat-header-cell *matHeaderCellDef> INMUEBLE </mat-header-cell>
+      <mat-cell *matCellDef="let propiedad"> {{propiedad.tipoPropiedad}} </mat-cell>
+    </tr>
+  
+    <!-- Operacion Column -->
+    <tr ng-container matColumnDef="operacion">
+      <mat-header-cell *matHeaderCellDef> OPERACIÓN </mat-header-cell>
+      <mat-cell *matCellDef="let propiedad"> {{propiedad.operacion}} </mat-cell>
+    </tr>
+  
+    <!-- Localidad Población Código postal Column -->
+    <tr ng-container matColumnDef="ubicacion">
+      <mat-header-cell *matHeaderCellDef> LOCALIDAD POBLACIÓN COD. POSTAL </mat-header-cell>
+      <mat-cell *matCellDef="let propiedad"> {{propiedad.localidad}} ({{propiedad.poblacion}}) {{propiedad.codigoPostal}} </mat-cell>
+    </tr>
+  
+    <!-- Tarifa Column -->
+    <tr ng-container matColumnDef="total">
+      <mat-header-cell *matHeaderCellDef> TARIFA </mat-header-cell>
+      <mat-cell *matCellDef="let propiedad"> {{propiedad.total}} € </mat-cell>
+    </tr>
+
+    <!-- Detalles Column -->
+    <tr ng-container matColumnDef="descripcion">
+        <mat-header-cell *matHeaderCellDef> DETALLES </mat-header-cell>
+        <mat-cell *matCellDef="let propiedad"> {{propiedad.descripcion}} </mat-cell>
+      </tr>
+    
+    
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+  </mat-table>
+  
+
+  <!-- Paginación -->
+<mat-paginator [length]="totalRegistros"
+[pageSize]="totalPorPagina"
+[pageSizeOptions]="opcionesTamanio"
+[pageIndex]="paginaActual"
+aria-label="Select page"
+showFirstLastButtons
+(page)="paginar($event)">
+</mat-paginator>

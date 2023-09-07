@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:"consultar", component: ConsultasClienteComponent},
   {path:"alta-pro", component: AltaProComponent},
   {path:"modificar", component: ModificarProComponent},
-  {path:"listados", component: ListadosProComponent},
+  {path:"listadoPropiedades", component: ListadosProComponent},
   {path:"consultar", component: ConsultasProComponent},
 
 ];

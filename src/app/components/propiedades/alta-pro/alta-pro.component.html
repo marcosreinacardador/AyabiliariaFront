@@ -7,21 +7,23 @@
 </head>
 
 <body>
-    <br><br><br>
+<br><br><br>
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card">
           <div class="card-body">
             <h6 class="card-title rest_titulo text-center mb-4">Dar de alta propiedad</h6>
-            <form (submit)="guardarPropiedad()">
+            <form (submit)="guardarPropiedad()" action="/altaPropiedad">
                 <div class="form-row">
+                <!--
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="numeroReferencia">Nº Referencia</label>
                             <input type="text" class="form-control" id="numeroReferencia" name="numeroReferencia" [(ngModel)]="propiedad.numeroReferencia" placeholder="Número de Referencia" required autofocus>
                         </div>
                     </div>
+                -->
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="dniCliente">DNI Cliente</label>
@@ -103,8 +105,8 @@
                         <div class="form-group">
                             <label>Situación del Inmueble</label>
                             <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="estado" name="estado" [(ngModel)]="propiedad.estado">
-                            <label class="form-check-label" for="estado">Activo</label>
+                            <input class="form-check-input" type="checkbox" id="estado" name="estado" [(ngModel)]="propiedad.estado" checked disabled>
+                            <label class="form-check-label" for="estado">Activo (Valor: {{ propiedad.estado }})</label>
                             </div>
                         </div>
                     </div>
